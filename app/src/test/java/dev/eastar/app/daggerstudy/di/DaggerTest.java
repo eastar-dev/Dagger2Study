@@ -13,6 +13,6 @@ public class DaggerTest {
 
         MyComponent myComponent = DaggerMyComponent.create();
         myComponent.inject(myClass);
-        assertEquals("eastar 10", myClass.name + " " + myClass.age);
+        assertEquals("eastar 10", myClass.name + " " + myClass.age2);
     }
 }

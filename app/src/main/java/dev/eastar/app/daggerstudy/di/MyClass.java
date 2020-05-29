@@ -8,4 +8,6 @@ public class MyClass {
 
     @Inject
     int age;
+    @Inject
+    int age2;
 }
