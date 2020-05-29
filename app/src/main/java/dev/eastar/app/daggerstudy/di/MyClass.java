@@ -4,9 +4,8 @@ import javax.inject.Inject;
 
 public class MyClass {
     @Inject
-    String str;
+    String name;
 
-    public String getStr() {
-        return str;
-    }
+    @Inject
+    int age;
 }

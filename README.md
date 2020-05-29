@@ -43,3 +43,9 @@ myComponent.inject(myClass);
       @Provides String dev.eastar.app.daggerstudy.di.DuplicationModule.provideLastName()
       @Provides String dev.eastar.app.daggerstudy.di.MyModule.provideName()
 ```
+
+## 모듈은 상속이 가능하며
+```
+@Module(includes = ModuleA.class)
+```
+형태로 가능하다.

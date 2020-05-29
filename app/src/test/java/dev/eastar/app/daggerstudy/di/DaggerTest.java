@@ -9,12 +9,10 @@ public class DaggerTest {
     @Test
     public void testMemberInjection() {
         MyClass myClass = new MyClass();
-        String str = myClass.getStr();
-        assertNull("처음에 그냥 받으면 null 이다", str);
+        assertNull("처음에 그냥 받으면 null 이다", myClass.name);
 
         MyComponent myComponent = DaggerMyComponent.create();
         myComponent.inject(myClass);
-        str = myClass.getStr();
-        assertEquals("eastar", str);
+        assertEquals("eastar 10", myClass.name + " " + myClass.age);
     }
 }
