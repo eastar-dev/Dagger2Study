@@ -37,4 +37,9 @@ MyComponent myComponent = DaggerMyComponent.create();
 myComponent.inject(myClass);
 ```
 
-
+## 컴터넌트 안에 중복되면 오류남
+```
+      @Provides String dev.eastar.app.daggerstudy.di.DuplicationModule.provideFirstName()
+      @Provides String dev.eastar.app.daggerstudy.di.DuplicationModule.provideLastName()
+      @Provides String dev.eastar.app.daggerstudy.di.MyModule.provideName()
+```
