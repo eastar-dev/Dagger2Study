@@ -25,3 +25,4 @@ local.properties
 *.aab
 *.apks
 .idea/navEditor.xml
+.idea/.name
