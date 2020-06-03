@@ -24,14 +24,14 @@ class Child : Im() {
     override fun toString(): String = child_name + super.toString()
 }
 
-open class Im() : Parent() {
+open class Im : Parent() {
     @Inject
     @JvmField
     var im_name: String = "::im_name::"
     override fun toString(): String = im_name + super.toString()
 }
 
-open class Parent() {
+open class Parent {
     @Inject
     @JvmField
     var parent_name: String = "::parent_name::"
