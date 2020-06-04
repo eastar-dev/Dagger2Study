@@ -1,9 +1,7 @@
 package dev.eastar.app.daggerstudy.di;
 
-import javax.inject.Named;
 import javax.inject.Singleton;
 
-import androidx.annotation.Nullable;
 import dagger.Module;
 import dagger.Provides;
 
@@ -11,7 +9,7 @@ import dagger.Provides;
 public class MyModule {
     @Provides
     @Singleton
-    Object provideObject(){
+    Object provideObject() {
         return new Object();
     }
 

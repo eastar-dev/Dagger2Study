@@ -3,7 +3,6 @@ package dev.eastar.app.daggerstudy.di
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import javax.inject.Inject
 import javax.inject.Singleton
 
 
