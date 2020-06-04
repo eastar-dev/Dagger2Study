@@ -8,6 +8,6 @@ public class MyModule {
 
     @Provides
     String provideName() {
-        return "eastar";
+        return "MyModule::eastar";
     }
 }
