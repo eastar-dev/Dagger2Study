@@ -6,10 +6,12 @@ import org.junit.Test
 class DaggerPersonTest {
     @Test
     fun testInjection() {
-        val getPersonA1 = DaggerPersonComponent.create().getPersonA()
-        println("$getPersonA1")
-        val getPersonA2 = DaggerPersonComponent.create().getPersonA()
-        println("$getPersonA2")
-        assertSame(getPersonA1, getPersonA2)
+        with(DaggerPersonComponent.create()) {
+            val getPersonA1 = getPersonA()
+            println("$getPersonA1")
+            val getPersonA2 = getPersonA()
+            println("$getPersonA2")
+            assertSame(getPersonA1, getPersonA2)
+        }
     }
 }
