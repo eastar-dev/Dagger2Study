@@ -1,5 +1,7 @@
 package dev.eastar.app.daggerstudy.di;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -7,12 +9,14 @@ import dagger.Provides;
 public class DuplicationModule {
 
     @Provides
+    @Named("first")
     String provideFirstName() {
         return "eastar";
     }
 
     @Provides
+    @Named("last")
     String provideLastName() {
-        return "eastar";
+        return "jeong";
     }
 }
