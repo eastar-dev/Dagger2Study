@@ -4,12 +4,14 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
+import javax.inject.Provider
 
 
 @Component(modules = [PersonModule::class])
 interface PersonComponent {
     fun getPersonA(): PersonA
     fun getPersonC(): PersonC
+    fun getPersonD(): PersonD
     fun inject(personB: PersonB)
 }
 
@@ -28,13 +30,23 @@ class PersonModule {
     }
 }
 
+data class PersonD @Inject constructor(
+    var name: Provider<String>
+    , var age: Provider<Int>
+) {
+    override fun toString(): String {
+        println("toString : $age")
+        return "${name.get()} ${age.get()}" + " " + super.toString()
+    }
+}
+
 data class PersonC @Inject constructor(
     var name: String
     , var age: Int
 ) {
     override fun toString(): String {
         println("toString : $age")
-        return "$name $age"
+        return "$name $age" + " " + super.toString()
     }
 }
 
@@ -44,7 +56,7 @@ data class PersonA @Inject constructor(
 ) {
     override fun toString(): String {
         println("toString : $age")
-        return  name.get() + " " + age.get()
+        return name.get() + " " + age.get() + " " + super.toString()
     }
 }
 

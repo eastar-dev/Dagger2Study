@@ -16,5 +16,11 @@ class DaggerPersonTest {
             println(personComponent)
             println(personComponent)
         }
+        println("=".repeat(30))
+        run {
+            val personComponent = DaggerPersonComponent.create().getPersonD()
+            println(personComponent)
+            println(personComponent)
+        }
     }
 }
