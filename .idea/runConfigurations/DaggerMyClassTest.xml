@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="DaggerTest" type="AndroidJUnit" factoryName="Android JUnit" nameIsGenerated="true">
+  <configuration default="false" name="DaggerMyClassTest" type="AndroidJUnit" factoryName="Android JUnit" nameIsGenerated="true">
     <module name="DaggerStudy.app" />
     <useClassPathOnly />
     <extension name="coverage">
@@ -9,7 +9,7 @@
       </pattern>
     </extension>
     <option name="PACKAGE_NAME" value="dev.eastar.app.daggerstudy.di" />
-    <option name="MAIN_CLASS_NAME" value="dev.eastar.app.daggerstudy.di.DaggerTest" />
+    <option name="MAIN_CLASS_NAME" value="dev.eastar.app.daggerstudy.di.DaggerMyClassTest" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <option name="PARAMETERS" value="" />

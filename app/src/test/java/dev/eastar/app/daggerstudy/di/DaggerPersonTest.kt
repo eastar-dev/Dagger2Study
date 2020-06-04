@@ -5,12 +5,16 @@ import org.junit.Test
 class DaggerPersonTest {
     @Test
     fun testInjection() {
-        val personComponent = DaggerPersonComponent.create().getPersonA()
-        println(personComponent)
-
-
-        val personB = PersonB()
-        DaggerPersonComponent.create().inject(personB)
-        println(personB)
+        run {
+            val personComponent = DaggerPersonComponent.create().getPersonA()
+            println(personComponent)
+            println(personComponent)
+        }
+        println("=".repeat(30))
+        run {
+            val personComponent = DaggerPersonComponent.create().getPersonC()
+            println(personComponent)
+            println(personComponent)
+        }
     }
 }

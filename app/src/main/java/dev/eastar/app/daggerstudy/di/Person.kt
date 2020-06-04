@@ -9,6 +9,7 @@ import javax.inject.Inject
 @Component(modules = [PersonModule::class])
 interface PersonComponent {
     fun getPersonA(): PersonA
+    fun getPersonC(): PersonC
     fun inject(personB: PersonB)
 }
 
@@ -18,14 +19,34 @@ class PersonModule {
     fun proviceName(): String = "eastar"
 
 
+    var age = 10
+
     @Provides
-    fun proviceAge(): Int = 10
+    fun proviceAge(): Int {
+        println("proviceAge : $age")
+        return age++
+    }
+}
+
+data class PersonC @Inject constructor(
+    var name: String
+    , var age: Int
+) {
+    override fun toString(): String {
+        println("toString : $age")
+        return "$name $age"
+    }
 }
 
 data class PersonA @Inject constructor(
-    var name: String
-    , var age: Int
-)
+    var name: dagger.Lazy<String>
+    , var age: dagger.Lazy<Int>
+) {
+    override fun toString(): String {
+        println("toString : $age")
+        return  name.get() + " " + age.get()
+    }
+}
 
 class PersonB {
     @Inject
