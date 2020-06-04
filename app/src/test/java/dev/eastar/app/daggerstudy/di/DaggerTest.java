@@ -2,6 +2,7 @@ package dev.eastar.app.daggerstudy.di;
 
 import org.junit.Test;
 
+import static java.sql.DriverManager.println;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -15,6 +16,6 @@ public class DaggerTest {
         MyComponent myComponent = DaggerMyComponent.create();
         myComponent.inject(myClass);
         str = myClass.getStr();
-        assertEquals("eastar", str);
+        System.out.println(str);
     }
 }

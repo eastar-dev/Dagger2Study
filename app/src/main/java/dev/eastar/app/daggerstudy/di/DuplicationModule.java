@@ -11,12 +11,12 @@ public class DuplicationModule {
     @Provides
     @Named("first")
     String provideFirstName() {
-        return "eastar";
+        return "DuplicationModule::eastar";
     }
 
     @Provides
     @Named("last")
     String provideLastName() {
-        return "jeong";
+        return "DuplicationModule::jeong";
     }
 }
