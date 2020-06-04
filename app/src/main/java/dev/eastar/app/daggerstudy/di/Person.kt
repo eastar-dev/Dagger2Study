@@ -7,7 +7,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 
-//@Singleton
+@Singleton
 @Component(modules = [PersonModule::class])
 interface PersonComponent {
     fun getPersonA(): PersonA
@@ -16,7 +16,7 @@ interface PersonComponent {
 @Module
 class PersonModule {
     @Provides
-//    @Singleton
+    @Singleton
     fun provicePsrsonA(): PersonA {
         return PersonA()
     }
