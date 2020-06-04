@@ -3,7 +3,7 @@ package dev.eastar.app.daggerstudy.di;
 import org.junit.Test
 import javax.inject.Inject
 
-class DaggerTest3 {
+class DaggerFamilyTest {
     @Test
     fun testInjection() {
         val child = Child()

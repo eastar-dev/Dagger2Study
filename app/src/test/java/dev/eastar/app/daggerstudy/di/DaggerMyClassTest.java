@@ -7,7 +7,7 @@ import dagger.MembersInjector;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class DaggerTest {
+public class DaggerMyClassTest {
     @Test
     public void testMemberInjection() {
         MyClass myClass = new MyClass();

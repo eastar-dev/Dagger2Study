@@ -1,9 +1,8 @@
 package dev.eastar.app.daggerstudy.di;
 
 import org.junit.Test
-import javax.inject.Inject
 
-class DaggerTest2 {
+class DaggerPersonTest {
     @Test
     fun testInjection() {
         val personComponent = DaggerPersonComponent.create().getPersonA()
