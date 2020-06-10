@@ -1,10 +1,12 @@
 package dev.eastar.app.daggerstudy
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import dev.eastar.app.daggerstudy.ui.login.Login
 import kotlinx.android.synthetic.main.app_main.*
 
 
@@ -33,7 +35,7 @@ class AppMain : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
 
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_login -> startActivity(Intent(this, Login::class.java)).run { true }
             else -> super.onOptionsItemSelected(item)
         }
     }
