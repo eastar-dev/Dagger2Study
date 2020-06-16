@@ -1,17 +1,28 @@
 package dev.eastar.app.daggerstudy
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import dev.eastar.app.daggerstudy.ui.login.AppApplication
+import dev.eastar.app.daggerstudy.base.AppApplication
+import dev.eastar.app.daggerstudy.di.AppMainComponent
+import dev.eastar.app.daggerstudy.di.AppMainModule
 import dev.eastar.app.daggerstudy.ui.login.Login
 import kotlinx.android.synthetic.main.app_main.*
+import javax.inject.Inject
 
 
 class AppMain : AppCompatActivity() {
+    @Inject
+    lateinit var sharedPreference: SharedPreferences
+
+    @Inject
+    lateinit var activityName: String
+
+    lateinit var appComponent: AppMainComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +34,13 @@ class AppMain : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        val app = application as AppApplication
-        app.appComponent
+        appComponent = (application as AppApplication).appComponent
+            .appMainComponentBuilder()
+            .setModule(AppMainModule())
+            .setAppMain(this)
+            .build()
+
+        appComponent.inject(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
