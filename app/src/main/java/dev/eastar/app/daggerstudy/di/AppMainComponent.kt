@@ -7,6 +7,7 @@ import dev.eastar.app.daggerstudy.AppMain
 @Subcomponent(modules = [AppMainModule::class])
 @ActivityScope
 interface AppMainComponent {
+    fun appMainFrComponentBuilder(): AppMainFrComponent.Builder
 
     fun inject(appMain: AppMain)
 

@@ -22,7 +22,13 @@ class AppMain : AppCompatActivity() {
     @Inject
     lateinit var activityName: String
 
-    lateinit var appComponent: AppMainComponent
+    val appComponent: AppMainComponent by lazy {
+        (application as AppApplication).appComponent
+            .appMainComponentBuilder()
+            .setModule(AppMainModule())
+            .setAppMain(this)
+            .build().also { it.inject(this) }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +39,6 @@ class AppMain : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-
-        appComponent = (application as AppApplication).appComponent
-            .appMainComponentBuilder()
-            .setModule(AppMainModule())
-            .setAppMain(this)
-            .build()
-
-        appComponent.inject(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

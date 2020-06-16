@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dev.eastar.app.daggerstudy.AppMain
 
-@Module
+@Module(subcomponents = [AppMainFrComponent::class])
 class AppMainModule {
     @Provides
     @ActivityScope
