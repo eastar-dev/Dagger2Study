@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import dev.eastar.app.daggerstudy.ui.login.AppApplication
 import dev.eastar.app.daggerstudy.ui.login.Login
 import kotlinx.android.synthetic.main.app_main.*
 
@@ -21,6 +22,9 @@ class AppMain : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        val app = application as AppApplication
+        app.appComponent
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

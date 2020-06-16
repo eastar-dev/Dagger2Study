@@ -7,6 +7,7 @@ import dev.eastar.app.daggerstudy.ui.login.AppApplication
 
 @Component(modules = [AppModule::class])
 interface AppComponent {
+    //    fun appMainComponentBuilder() : AppMainComponent.Builder
     fun inject(app: AppApplication)
 
     @Component.Factory
