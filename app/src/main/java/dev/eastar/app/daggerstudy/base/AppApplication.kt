@@ -1,4 +1,4 @@
-package dev.eastar.app.daggerstudy.ui.login
+package dev.eastar.app.daggerstudy.base
 
 import android.app.Application
 import android.content.Intent

@@ -7,10 +7,10 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module
+@Module(subcomponents = [AppMainComponent::class])
 class AppModule {
-
-    @Provides
     @Singleton
-    fun proficeSharedPreferences(app: Application): SharedPreferences = app.getSharedPreferences("default", Context.MODE_PRIVATE)
+    @Provides
+    fun providerSharedPreferences(app: Application): SharedPreferences =
+        app.getSharedPreferences("default", Context.MODE_PRIVATE)
 }

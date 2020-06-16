@@ -3,11 +3,12 @@ package dev.eastar.app.daggerstudy.di
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
-import dev.eastar.app.daggerstudy.ui.login.AppApplication
+import dev.eastar.app.daggerstudy.base.AppApplication
+import javax.inject.Singleton
 
 @Component(modules = [AppModule::class])
+@Singleton
 interface AppComponent {
-    //    fun appMainComponentBuilder() : AppMainComponent.Builder
     fun inject(app: AppApplication)
 
     @Component.Factory
