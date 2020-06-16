@@ -1,6 +1,7 @@
 package dev.eastar.app.daggerstudy.di
 
 import android.app.Application
+import dagger.BindsInstance
 import dagger.Component
 import dev.eastar.app.daggerstudy.ui.login.AppApplication
 
@@ -10,8 +11,6 @@ interface AppComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(app: Application, appModule: AppModule): AppComponent
-
-
+        fun create(@BindsInstance app: Application, appModule: AppModule): AppComponent
     }
 }
