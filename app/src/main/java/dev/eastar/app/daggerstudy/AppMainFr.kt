@@ -34,6 +34,9 @@ class AppMainFr : Fragment() {
                 .setAppMainFr(this)
                 .build()
                 .inject(this)
+
+            //이부분이 계속 만들어야 하는 보일러 플레이트 코드를 없에게 위해서
+            //DaggerFragement를 사용해야 하는데 상속을 받아야 해서 재약이 있다.
         }
 
         Log.e(this.javaClass.simpleName, activityName)
